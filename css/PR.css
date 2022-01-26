@@ -1,6 +1,10 @@
 /* Start Variables */
 :root{
   --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
+  --main-duration: 0.5s;
 }
 /* End Variables */
 /* Start Global Rules  */
@@ -43,7 +47,29 @@ body {
   padding-right: 10px;
 }
 /* End Global rules */
-
+/* Start Componants */
+.special-heading{
+  color:#ebeced ;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: -4px;
+  margin: 0;
+}
+.special-heading + p{
+  margin-top: -30px;
+  font-size: 20px;
+  text-align: center;
+  color: #797979;
+}
+@media(max-width:767px){
+  .special-heading{
+    font-size: 60px;
+  }
+  .special-heading + p{
+    margin-top: -20px;
+  }
+}
+/* End Componants */
 /* Header */
 .header {
   padding: 20px;
@@ -127,9 +153,9 @@ body {
 .landing{
   background-image: url(../images/first.jpg);
   background-size: cover;
+  background-attachment: fixed;
   height: calc(100vh - 100px);
   position: relative;
-
 }
 .landing .intro{
   position: absolute;
@@ -150,3 +176,131 @@ body {
 font-size: 19px;
 line-height: 1,5;
 }
+/* End landing */
+/* Start features */
+.fratures{
+  padding-top:var(--section-padding);
+  padding-bottom: 60px;
+  background-color: #e9e5e53d;
+}
+.fratures .container{
+  display: grid;
+  grid-template-columns:repeat(auto-fill , minmax(400px,1fr));
+  grid-gap: 20px;
+}
+.fratures .feat{
+  padding: 20px;
+  text-align: center;
+}
+.fratures  .feat i{
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: var(--main-color);
+}
+.fratures  .feat h3{
+  font-weight: 800;
+  margin: 0;
+}
+.fratures  .feat p{
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
+}
+/* end features */
+/* Start Services  */
+.services{
+  padding-top:var(--section-padding); 
+  padding-bottom: 60px;
+}
+.services .serices-content{
+  display: grid;
+  grid-template-columns:repeat(auto-fill , minmax(400px,1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.services .serices-content .ser{
+  display: flex;
+  margin-bottom: 40px;
+}
+@media(max-width:767px){
+  .services .serices-content .ser{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .ser i{
+  color: var(--main-color);
+  flex-basis: 60px;
+  font-size: 30px;
+}
+.services .ser .text{
+  flex: 1;
+
+}
+.services .ser .text h3{  
+margin: 0;
+}
+.services .ser .text p{  
+color: #777;
+font-weight: 300;
+line-height: 1.8;
+}
+.services .image{
+  position: relative;
+  text-align: center;
+}
+.services .image img{
+  width: 260px;
+}
+.services .image::before{
+  content: "";
+  background-color: var(--secondary-color);
+  width: 100px;
+  height: calc(100% + 100px);
+  top: -50px;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+
+}
+@media (max-width: 1199px) {
+  .image-column {
+    display: none;
+  }
+}
+/* Start Services  */
+/* Start Portfolio */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+.portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 30px;
+  margin-top: 80px;
+}
+.portfolio .portfolio-content .card {
+  background-color: white;
+}
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
+}
+.portfolio .portfolio-content .card .info {
+  padding: 20px;
+}
+.portfolio .portfolio-content .card .info h3 {
+  margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+@media (max-width: 676px) {
+  .portfolio .portfolio-content .card {
+    text-align: center;
+  }
+}
+/* End Portfolio */
